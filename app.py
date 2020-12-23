@@ -66,7 +66,7 @@ def main():
         d1['text'] = ""
         d1['text'] = df[st_ms]
         d1['text'] = d1['text'].astype(str)
-        
+        documents = []
         for x in range(len(d1)):
                     d1.text.iloc[x] = d1.text.iloc[x].lower() #to lower case
                     d1.text.iloc[x] = re.sub(r"@\S+","", d1.text.iloc[x]) #remove mentions
@@ -76,13 +76,13 @@ def main():
                     d1.text.iloc[x] = [i for i in d1.text.iloc[x] if not i in english_stop_words] #remove stop words
                     d1.text.iloc[x] = [i for i in d1.text.iloc[x] if not i in malay_stop_words]
                     d1.text.iloc[x] = [i for i in d1.text.iloc[x] if len(i) > 2] #too short potong
-                    print('Completed line : ',x)
+                    documents.append(d1.text.iloc[x])
                 
         
 
         #INITIALIZE THE TOP2VEC MODEL AND FIT THE TEXT
         #model.build_vocab(df_list, update=False)
-        model = Top2Vec(documents=str(d1['text']), speed="learn", workers=10)
+        model = Top2Vec(documents=documents, speed="learn", workers=10)
         
         topic_sizes, topic_nums = model.get_topic_sizes()
         for topic in topic_nums:
