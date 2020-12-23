@@ -21,7 +21,7 @@ english_stop_words = ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves
 
 from stop_words import get_stop_words
 
-malay_stop_words = get_stop_words('Indonesian')
+malay_stop_words = get_stop_words('indonesian')
 
 def main():
     st.set_option('deprecation.showfileUploaderEncoding', False)
