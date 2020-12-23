@@ -82,7 +82,7 @@ def main():
 
         #INITIALIZE THE TOP2VEC MODEL AND FIT THE TEXT
         #model.build_vocab(df_list, update=False)
-        model = Top2Vec(documents=d1['text'], speed="learn", workers=10)
+        model = Top2Vec(documents=str(d1['text']), speed="learn", workers=10)
         
         topic_sizes, topic_nums = model.get_topic_sizes()
         for topic in topic_nums:
