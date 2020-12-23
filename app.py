@@ -18,7 +18,7 @@ import malaya
 import streamlit as st
 
 
-from PIL import Image
+
 
 preprocessing = malaya.preprocessing.preprocessing()
 
@@ -57,7 +57,7 @@ def main():
         st_ms = st.sidebar.selectbox("Select Text Columns To Analyse", (df.columns.tolist()))
         
 
-        df_list = list(df)
+
  
 
         import top2vec
