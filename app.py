@@ -27,13 +27,6 @@ preprocessing = malaya.preprocessing.preprocessing()
 def main():
     st.set_option('deprecation.showfileUploaderEncoding', False)
 
-    st.title("HATI.AI")
-    image = Image.open('macroview.jpg')
-    #st.image(image, use_column_width=False)
-    st.sidebar.image(image)
-    st.sidebar.title("Hati.Ai Web App")
-    
-
 
             
     @st.cache(suppress_st_warning=True)
@@ -57,9 +50,6 @@ def main():
 
 
 
-        if st.sidebar.checkbox("Show raw data", False):
-            st.subheader("Uploaded Data Set")
-            st.write(df)
 
 
 
