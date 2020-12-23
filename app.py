@@ -55,6 +55,7 @@ def main():
         st.sidebar.subheader("Text column to analyse")
         st_ms = st.sidebar.selectbox("Select Text Columns To Analyse", (df.columns.tolist()))
         import nltk
+        nltk.download('punkt')
         from nltk import word_tokenize
 
         import top2vec
