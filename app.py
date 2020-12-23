@@ -76,9 +76,9 @@ def main():
                     d1.text.iloc[x] = [i for i in d1.text.iloc[x] if not i in english_stop_words] #remove stop words
                     d1.text.iloc[x] = [i for i in d1.text.iloc[x] if not i in malay_stop_words]
                     d1.text.iloc[x] = [i for i in d1.text.iloc[x] if len(i) > 2] #too short potong
-                    documents.append(d1.text.iloc[x])
+                    documents.append(str(d1.text.iloc[x]))
                 
-        
+
 
         #INITIALIZE THE TOP2VEC MODEL AND FIT THE TEXT
         #model.build_vocab(df_list, update=False)
