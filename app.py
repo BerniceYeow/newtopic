@@ -55,7 +55,7 @@ def main():
         st.sidebar.subheader("Text column to analyse")
         st_ms = st.sidebar.selectbox("Select Text Columns To Analyse", (df.columns.tolist()))
         import nltk
-
+        from nltk import word_tokenize
 
         import top2vec
         from top2vec import Top2Vec
@@ -71,7 +71,7 @@ def main():
                     d1.text.iloc[x] = re.sub(r"@\S+","", d1.text.iloc[x]) #remove mentions
                     d1.text.iloc[x] = re.sub(r"http\S+","", d1.text.iloc[x]) #remove hyperlinks
                     d1.text.iloc[x] = ''.join([word for word in d1.text.iloc[x] if not word.isdigit()]) #remove numbers
-                    d1.text.iloc[x] =  nltk.word_tokenize(d1.text.iloc[x]) #tokenising
+                    d1.text.iloc[x] =  word_tokenize(d1.text.iloc[x]) #tokenising
                     d1.text.iloc[x] = [i for i in d1.text.iloc[x] if not i in english_stop_words] #remove stop words
                     d1.text.iloc[x] = [i for i in d1.text.iloc[x] if not i in malay_stop_words]
                     d1.text.iloc[x] = [i for i in d1.text.iloc[x] if len(i) > 2] #too short potong
