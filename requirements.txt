@@ -4,4 +4,5 @@ streamlit==0.64.0
 top2vec==1.0.10
 stop-words==2018.7.23
 nltk==3.5
-pillow
+Pillow==7.2.0
+matplotlib==3.3.1
